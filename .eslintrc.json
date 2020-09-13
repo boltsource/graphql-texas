@@ -1,0 +1,6 @@
+{
+  "extends" : ["@blockmatic"],
+  "globals": {
+    "tw": true
+  }
+}
