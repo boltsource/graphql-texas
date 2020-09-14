@@ -6,8 +6,13 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'GraphQL Texas',
-    description: 'GraphQL Texas events site',
+    title: 'BoltSource',
+    description:
+      'We partner with companies to build amazing digital experiences.  Expert software engineers for web, mobile, and cloud native',
+    author: '@boltsourceio',
+    siteUrl: 'https://boltsource.io',
+    keywords:
+      'consulting,contracting,software development,software engineering,engineering leadership,product development,software as a service, saas,graphql,reactjs,react native,kubernetes,cloud native,software architecture,consultants,contractors',
   },
   plugins: [
     'gatsby-transformer-sharp',
@@ -17,7 +22,7 @@ module.exports = {
       options: {
         typeName: 'GCMS',
         fieldName: 'gcms',
-        url: process.env.GATSBY_API_URL,
+        url: process.env.GRAPHCMS_ENDPOINT,
       },
     },
     {
