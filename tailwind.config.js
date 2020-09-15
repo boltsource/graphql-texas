@@ -130,6 +130,8 @@ module.exports = {
       primary: '#045365',
       secondary: '#024D5F',
       tertiary: '#3991A4',
+      quaternary: '#6FCFE4',
+      quinary: '#024959',
     },
     spacing: {
       px: '1px',

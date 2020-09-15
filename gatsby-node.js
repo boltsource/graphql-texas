@@ -22,6 +22,7 @@ exports.createPages = async ({ actions, graphql }) => {
           metaDescription
           metaKeywords
           featureEvent {
+            meetupLink
             eventDate
             name {
               raw

@@ -5,6 +5,7 @@ export type TextRichType = {
 }
 
 export type FeatureEventType = {
+  meetupLink?: string
   eventDate: string
   name: {
     raw?: {
