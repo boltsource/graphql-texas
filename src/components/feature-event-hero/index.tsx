@@ -1,11 +1,24 @@
 import React from 'react'
 import moment from 'moment'
 import { Link } from 'gatsby'
+import styled from '@emotion/styled'
 
 import TextMarked from '../text-marked'
 import CalendarIcon from '../calendar-icon'
 
 import { FeatureEventType } from '../../types'
+
+const StyledLink = styled(Link)`
+  @media (min-width: 1024px) {
+    max-width: 11.25rem;
+  }
+`
+
+const StyledAnchor = styled.a`
+  @media (min-width: 1024px) {
+    max-width: 17.75rem;
+  }
+`
 
 const ParagraphText = ({ type, children }) => {
   if (type === 'paragraph') {
@@ -31,26 +44,20 @@ const CTAbuttons = props => {
           <span className="ml-6">{`${eventTimeFormated.format('LL')}`}</span>
         </div>
       </div>
-      <Link
+      <StyledLink
         to={'/#Schedule'}
         target="_blank"
         className="bg-transparent text-quaternary font-normal font-poppins py-3 px-10 lg:px-6 border-quaternary border-2 text-base mt-5 text-center"
-        style={{
-          maxWidth: '11.25rem',
-        }}
       >
         View Schedule
-      </Link>
-      <a
+      </StyledLink>
+      <StyledAnchor
         href={props?.meetupLink}
         target="_blank"
         className="bg-quinary text-white font-normal font-poppins py-3 px-10 lg:px-6 border-tertiary border-2 text-base mt-5 text-center lg:ml-8"
-        style={{
-          maxWidth: '17.75rem',
-        }}
       >
         Make your reservation
-      </a>
+      </StyledAnchor>
     </div>
   )
 }
