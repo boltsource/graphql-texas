@@ -11,7 +11,7 @@ type TemplateProps = {
 const BlogPostTemplate = ({ data }: TemplateProps) => {
   return (
     <BaseLayout>
-      <div className={`container font-sans text-gray-800 p-4`}>
+      <div className={`container font-sans text-gray-800`}>
         {/* <Img 
           fluid={featured_media.localFile.childImageSharp.fluid}
           className="w-full"

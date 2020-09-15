@@ -3,19 +3,9 @@ import { graphql, Link } from 'gatsby'
 import Img, { FluidObject } from 'gatsby-image'
 
 import BaseLayout from '../components/base-layout'
+import FeatureEventHero from '../components/feature-event-hero'
 
-type TextRich =
-  | {
-      bold: string
-      text: string
-    }
-  | {
-      bold: string
-      text: string
-    }
-  | {
-      text: string
-    }
+import { TextRichType, FeatureEventType } from '../types'
 
 type TemplateProps = {
   slug: {
@@ -25,41 +15,10 @@ type TemplateProps = {
   titleTag: string
   metaDescription: string
   metaKeywords: string
-  featureEvent: {
-    eventDate: string
-    name: {
-      raw?: {
-        type: 'paragraph'
-        children?: TextRich[]
-      }[]
-    }
-    sponsorInfo: {
-      raw?: {
-        type: string
-        children?:
-          | {
-              bold: string
-              text: string
-            }[]
-          | {
-              bold: string
-              text: string
-            }[]
-      }[]
-    }
-    schedule: {
-      timeSections: {
-        title: string
-        eventDateTime: string
-        description: {
-          raw?: TextRich[]
-        }
-      }
-    }
-  }
+  featureEvent: FeatureEventType
   mainSectionTitle: string
   mainSectionDescription: {
-    raw?: TextRich[]
+    raw?: TextRichType[]
   }
   ourSpeakers: {
     profileImage: {
@@ -73,11 +32,11 @@ type TemplateProps = {
   }
 }
 
-const PageTemplate = (data: TemplateProps) => {
+const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
   return (
     <BaseLayout>
-      <div className={`container font-sans text-gray-800 p-4`}>
-        <pre>{JSON.stringify(data, null, 2)}</pre>
+      <div className={`container font-sans text-gray-800`}>
+        <FeatureEventHero {...pageContext.featureEvent} />
       </div>
     </BaseLayout>
   )
