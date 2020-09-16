@@ -8,7 +8,7 @@ import OurSpeakers from '../components/our-speakers'
 
 import { TextRichType, FeatureEventType } from '../types'
 
-const GeometryDecoration = styled.div`
+const SvgGeometry = styled.svg`
   display: none;
   @media (min-width: 1024px) {
     position: absolute;
@@ -16,13 +16,23 @@ const GeometryDecoration = styled.div`
     width: 100%;
     right: 0;
     left: 0;
-    height: 50rem;
+    height: auto;
     display: flex;
-    background-color: transparent;
-    border-top: 10px solid #024d5f;
-    border-right: 10px solid #024d5f;
   }
 `
+
+const GeometryDecoration = props => {
+  return (
+    <SvgGeometry viewBox="0 0 1440 797" fill="none" {...props}>
+      <path
+        d="M1430 10v770.036L38.718 10H1430z"
+        stroke="#024959"
+        strokeOpacity={0.6}
+        strokeWidth={20}
+      />
+    </SvgGeometry>
+  )
+}
 
 type TemplateProps = {
   slug: {
@@ -43,6 +53,7 @@ type TemplateProps = {
     }
   }
   ourSpeakers: {
+    id: string
     profileImage: {
       handle: string
       width: number

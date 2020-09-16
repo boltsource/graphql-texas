@@ -8,7 +8,7 @@ interface BaseLayoutProp {
 
 const BaseLayout = ({ children }: BaseLayoutProp) => {
   return (
-    <div className={`min-h-screen bg-primary px-4`}>
+    <div className={`min-h-screen bg-primary px-4 overflow-hidden`}>
       <div className="container mx-auto">
         <Header />
         <div className={`flex flex-col items-center mt-10 lg:mt-32`}>

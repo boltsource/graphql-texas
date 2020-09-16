@@ -37,6 +37,7 @@ exports.createPages = async ({ actions, graphql }) => {
             }
             schedule {
               timeSections {
+                id
                 title
                 eventDateTime
                 description {
@@ -50,6 +51,7 @@ exports.createPages = async ({ actions, graphql }) => {
             raw
           }
           ourSpeakers {
+            id
             profileImage {
               handle
               width

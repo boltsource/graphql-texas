@@ -53,7 +53,11 @@ const IntroductionTitleText = (props: IntroductionTitleTextProps) => {
         <div className="font-poppins text-xl text-white text-center lg:text-left lg:max-w-xl">
           {props.text &&
             props.text?.raw?.children?.map(p => (
-              <ParagraphText {...p} className="font-light" />
+              <ParagraphText
+                key={JSON.stringify(p)}
+                {...p}
+                className="font-light"
+              />
             ))}
         </div>
       </div>
