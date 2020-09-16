@@ -58,7 +58,7 @@ type TemplateProps = {
 
 const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
   return (
-    <>
+    <BaseLayout>
       <GeometryDecoration />
       <div className="container">
         <FeatureEventHero {...pageContext.featureEvent} />
@@ -68,7 +68,7 @@ const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
         />
         <OurSpeakers ourSpeakers={pageContext.ourSpeakers} />
       </div>
-    </>
+    </BaseLayout>
   )
 }
 
