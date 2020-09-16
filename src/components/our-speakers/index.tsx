@@ -29,14 +29,14 @@ const ProfileImageWrapper = styled.div`
 const Twitter = props => {
   return (
     <a
-      href={props?.githubLink}
+      href={props?.twitterLink}
       target="_blank"
-      className="flex flex-row items-center font-poppins font-normal"
+      className="flex flex-row items-center font-poppins font-normal cursor-pointer"
       style={{
         color: 'rgba(255, 255, 255, 0.7)',
       }}
     >
-      <svg width={33} height={32} viewBox="0 0 33 32" fill="none" {...props}>
+      <svg width={33} height={32} viewBox="0 0 33 32" fill="none">
         <g clipPath="url(#prefix__clip0)">
           <path
             d="M10.563 29.002c12.076 0 18.68-10.005 18.68-18.68 0-.285 0-.568-.018-.85A13.358 13.358 0 0032.5 6.075c-1.198.531-2.47.88-3.77 1.033a6.589 6.589 0 002.886-3.631 13.16 13.16 0 01-4.17 1.593A6.574 6.574 0 0022.66 3c-3.605 0-6.571 2.966-6.571 6.572 0 .5.057.998.17 1.485a18.648 18.648 0 01-13.53-6.86c-1.734 2.984-.837 6.85 2.032 8.765a6.516 6.516 0 01-2.98-.822v.083a6.587 6.587 0 005.267 6.436 6.558 6.558 0 01-2.964.113 6.586 6.586 0 006.133 4.56A13.176 13.176 0 01.5 26.051a18.589 18.589 0 0010.063 2.945"
@@ -60,13 +60,13 @@ const Github = props => {
     <a
       href={props?.githubLink}
       target="_blank"
-      className="flex flex-row items-center font-poppins font-normal"
+      className="flex flex-row items-center font-poppins font-normal cursor-pointer"
       style={{
         color: 'rgba(255, 255, 255, 0.7)',
         marginLeft: '1rem',
       }}
     >
-      <svg width={33} height={32} viewBox="0 0 33 32" fill="none" {...props}>
+      <svg width={33} height={32} viewBox="0 0 33 32" fill="none">
         <g clipPath="url(#prefix__clip0)">
           <path
             d="M16.5 0C7.664 0 .5 7.164.5 16c0 7.07 4.584 13.066 10.942 15.182.8.146 1.092-.348 1.092-.77 0-.38-.014-1.642-.022-2.978-4.45.966-5.39-1.887-5.39-1.887-.728-1.848-1.776-2.34-1.776-2.34-1.454-.992.11-.973.11-.973 1.606.112 2.452 1.649 2.452 1.649 1.428 2.445 3.746 1.738 4.656 1.328.146-1.031.56-1.738 1.016-2.137-3.552-.404-7.288-1.777-7.288-7.908 0-1.748.624-3.174 1.646-4.294-.164-.406-.714-2.034.158-4.236 0 0 1.341-.43 4.4 1.64a15.23 15.23 0 014.004-.538c1.36.006 2.729.184 4.006.54 3.053-2.072 4.396-1.64 4.396-1.64.875 2.204.325 3.83.16 4.234 1.026 1.12 1.645 2.546 1.645 4.294 0 6.146-3.742 7.5-7.307 7.896.577.497 1.086 1.47 1.086 2.961 0 2.14-.021 3.864-.021 4.391 0 .426.29.924 1.101.768C27.92 29.062 32.5 23.066 32.5 16c0-8.836-7.164-16-16-16z"
@@ -86,7 +86,6 @@ const Github = props => {
 }
 
 const Speaker = props => {
-  console.log({ props })
   return (
     <div className="mt-12 flex flex-col items-center">
       <ProfileImageWrapper className="relative">

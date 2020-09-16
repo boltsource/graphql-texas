@@ -54,14 +54,14 @@ const CTAbuttons = props => {
         <StyledLink
           to={'/#Schedule'}
           target="_blank"
-          className="bg-transparent text-quaternary font-normal font-poppins py-3 px-10 lg:px-6 border-quaternary border-2 text-base mt-5 text-center"
+          className="bg-transparent text-quaternary font-normal font-poppins py-3 px-10 lg:px-6 border-quaternary border-2 text-base mt-5 text-center cursor-pointer"
         >
           View Schedule
         </StyledLink>
         <StyledAnchor
           href={props?.meetupLink}
           target="_blank"
-          className="bg-quinary text-white font-normal font-poppins py-3 px-10 lg:px-6 border-tertiary border-2 text-base mt-5 text-center lg:ml-8"
+          className="bg-quinary text-white font-normal font-poppins py-3 px-10 lg:px-6 border-tertiary border-2 text-base mt-5 text-center lg:ml-8 cursor-pointer"
         >
           Make your reservation
         </StyledAnchor>

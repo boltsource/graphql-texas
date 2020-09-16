@@ -3,3 +3,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.max-h-0 {
+  max-height: 0px;
+}

@@ -47,7 +47,7 @@ const Header = () => {
           <li key={id}>
             <TextMarked className="mr-2" isMarked>
               <Link
-                className="font-poppins text-xs md:text-base text-white font-semibold px-1"
+                className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer"
                 to={slug.path}
               >
                 {title}
@@ -58,7 +58,7 @@ const Header = () => {
         <li>
           <TextMarked className="mr-2">
             <Link
-              className="font-poppins text-xs md:text-base text-white font-semibold px-1"
+              className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer"
               to="/"
             >
               Past Events
@@ -68,7 +68,7 @@ const Header = () => {
         <li>
           <TextMarked className="mr-2">
             <Link
-              className="font-poppins text-xs md:text-base text-white font-semibold px-1"
+              className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer"
               to="/"
             >
               Call for papers

@@ -5,6 +5,7 @@ import BaseLayout from '../components/base-layout'
 import FeatureEventHero from '../components/feature-event-hero'
 import IntroductionTitleText from '../components/introduction-title-text'
 import OurSpeakers from '../components/our-speakers'
+import Schedule from '../components/schedule'
 
 import { TextRichType, FeatureEventType } from '../types'
 
@@ -78,6 +79,10 @@ const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
           text={pageContext.mainSectionDescription}
         />
         <OurSpeakers ourSpeakers={pageContext.ourSpeakers} />
+        <Schedule
+          speakers={pageContext?.featureEvent?.speakers}
+          {...pageContext.featureEvent.schedule}
+        />
       </div>
     </BaseLayout>
   )

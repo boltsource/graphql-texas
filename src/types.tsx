@@ -5,6 +5,9 @@ export type TextRichType = {
 }
 
 export type FeatureEventType = {
+  speakers?: {
+    name: string
+  }[]
   eventImage?: {
     handle: string
     width: number
@@ -30,6 +33,7 @@ export type FeatureEventType = {
   }
   schedule: {
     timeSections: {
+      author: string
       title: string
       eventDateTime: string
       description: {
@@ -38,6 +42,6 @@ export type FeatureEventType = {
           children?: TextRichType[]
         }
       }
-    }
+    }[]
   }
 }

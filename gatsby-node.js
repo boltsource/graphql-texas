@@ -37,6 +37,7 @@ exports.createPages = async ({ actions, graphql }) => {
             }
             schedule {
               timeSections {
+                author
                 id
                 title
                 eventDateTime
