@@ -3,7 +3,7 @@ import React from 'react'
 import Header from '../header'
 
 interface BaseLayoutProp {
-  children: JSX.Element
+  children: JSX.Element | JSX.Element[]
 }
 
 const BaseLayout = ({ children }: BaseLayoutProp) => {

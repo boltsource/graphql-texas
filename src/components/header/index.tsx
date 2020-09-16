@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <div className="bg-primary pt-5 border-secondary flex flex-row items-center justify-between">
       <Logo />
-      <ul className="flex mr-1">
+      <ul className="flex mr-1 lg:mr-64">
         {pages.map(({ id, title, slug }) => (
           <li key={id}>
             <TextMarked className="mr-2" isMarked>

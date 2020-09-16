@@ -5,6 +5,11 @@ export type TextRichType = {
 }
 
 export type FeatureEventType = {
+  eventImage?: {
+    handle: string
+    width: number
+    height: number
+  }
   meetupLink?: string
   eventDate: string
   name: {
