@@ -51,7 +51,9 @@ exports.createPages = async ({ actions, graphql }) => {
           }
           ourSpeakers {
             profileImage {
-              url
+              handle
+              width
+              height
             }
             name
             role

@@ -1,11 +1,10 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
-import Img, { FluidObject } from 'gatsby-image'
 import styled from '@emotion/styled'
 
 import BaseLayout from '../components/base-layout'
 import FeatureEventHero from '../components/feature-event-hero'
 import IntroductionTitleText from '../components/introduction-title-text'
+import OurSpeakers from '../components/our-speakers'
 
 import { TextRichType, FeatureEventType } from '../types'
 
@@ -45,19 +44,21 @@ type TemplateProps = {
   }
   ourSpeakers: {
     profileImage: {
-      url: string
+      handle: string
+      width: number
+      height: number
     }
     name: string
     role: string
     companyName: string
     githubLink: string
     twitterLink: string
-  }
+  }[]
 }
 
 const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
   return (
-    <BaseLayout>
+    <>
       <GeometryDecoration />
       <div className="container">
         <FeatureEventHero {...pageContext.featureEvent} />
@@ -65,8 +66,9 @@ const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
           title={pageContext.mainSectionTitle}
           text={pageContext.mainSectionDescription}
         />
+        <OurSpeakers ourSpeakers={pageContext.ourSpeakers} />
       </div>
-    </BaseLayout>
+    </>
   )
 }
 
