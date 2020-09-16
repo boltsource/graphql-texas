@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import GraphImg from 'graphcms-image'
 
-import TextMarked from '../text-marked'
+import ParagraphText from '../paragraph-text'
 import CalendarIcon from '../calendar-icon'
 
 import { FeatureEventType } from '../../types'
@@ -39,20 +39,6 @@ const ImageContainer = styled.div`
     top: -50px;
   }
 `
-
-const ParagraphText = ({ type, children }) => {
-  if (type === 'paragraph') {
-    return children.map((p, i) => (
-      <TextMarked key={i} isMarked={p.underline || false}>
-        <span className={`${p?.bold ? 'font-bold' : 'font-normal'} z-10`}>
-          {p.text}
-        </span>
-      </TextMarked>
-    ))
-  }
-
-  return <React.Fragment />
-}
 
 const CTAbuttons = props => {
   const eventTimeFormated = moment(props?.eventDate)

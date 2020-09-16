@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 
 import BaseLayout from '../components/base-layout'
 import FeatureEventHero from '../components/feature-event-hero'
+import IntroductionTitleText from '../components/introduction-title-text'
 
 import { TextRichType, FeatureEventType } from '../types'
 
@@ -35,7 +36,12 @@ type TemplateProps = {
   featureEvent: FeatureEventType
   mainSectionTitle: string
   mainSectionDescription: {
-    raw?: TextRichType[]
+    raw?: {
+      children?: {
+        type: 'paragraph'
+        children?: TextRichType[]
+      }[]
+    }
   }
   ourSpeakers: {
     profileImage: {
@@ -55,6 +61,10 @@ const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
       <GeometryDecoration />
       <div className="container">
         <FeatureEventHero {...pageContext.featureEvent} />
+        <IntroductionTitleText
+          title={pageContext.mainSectionTitle}
+          text={pageContext.mainSectionDescription}
+        />
       </div>
     </BaseLayout>
   )
