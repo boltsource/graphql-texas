@@ -23,12 +23,17 @@ const StyledAnchor = styled.a`
 
 const TitleContainer = styled.div`
   @media (min-width: 1024px) {
-    max-width: 23.75rem;
+    max-width: 32.75rem;
+    margin-right: 2rem;
+    margin-top: 0.5rem;
   }
 `
 
 const ImageContainer = styled.div`
   position: relative;
+  max-width: 30.3rem;
+  margin-top: 15px;
+  margin-left: 4.4rem;
   &:after {
     content: '';
     position: absolute;
@@ -36,32 +41,35 @@ const ImageContainer = styled.div`
     background-repeat: no-repeat;
     height: 13rem;
     width: 10rem;
-    top: -50px;
+    top: -46px;
+    left: 41px;
   }
 `
 
 const CTAbuttons = props => {
   const eventTimeFormated = moment(props?.eventDate)
   return (
-    <div className="flex flex-col justify-center mt-10">
-      <div className="flex justify-center bg-transparent text-quaternary font-normal font-poppins py-3 px-10 border-tertiary border-2 text-xl lg:max-w-sm lg:mb-10">
+    <div className="flex flex-col justify-center lg:self-start lg:ml-20 mt-10">
+      <div className="flex justify-center bg-transparent text-quaternary font-normal font-poppins py-4 px-10 border-tertiary border-2 text-xl lg:text-8xl lg:max-w-sm lg:mb-10">
         <div className="flex items-center">
           <CalendarIcon />
-          <span className="ml-6">{`${eventTimeFormated.format('LL')}`}</span>
+          <span className="ml-6">{`${eventTimeFormated.format(
+            'DD MMMM, YYYY',
+          )}`}</span>
         </div>
       </div>
       <div className="flex flex-col lg:flex-row">
         <StyledLink
           to={'/#Schedule'}
           target="_blank"
-          className="bg-transparent text-quaternary font-normal font-poppins py-3 px-10 lg:px-6 border-quaternary border-2 text-base mt-5 text-center cursor-pointer"
+          className="bg-transparent text-quaternary font-normal font-poppins py-4 px-10 lg:px-5 border-quaternary border-2 text-base lg:text-lg mt-5 lg:mt-0 text-center cursor-pointer"
         >
           View Schedule
         </StyledLink>
         <StyledAnchor
           href={props?.meetupLink}
           target="_blank"
-          className="bg-quinary text-white font-normal font-poppins py-3 px-10 lg:px-6 border-tertiary border-2 text-base mt-5 text-center lg:ml-8 cursor-pointer"
+          className="bg-quinary text-white font-normal font-poppins py-4 px-10 lg:px-5 border-tertiary border-2 text-base lg:text-xl mt-5 lg:mt-0 text-center lg:ml-8 cursor-pointer"
         >
           Make your reservation
         </StyledAnchor>
@@ -75,13 +83,13 @@ const FeatureEventHero = (props: FeatureEventType) => {
   const sponsorInfo = props?.sponsorInfo?.raw?.children
   return (
     <div className="flex lg:grid lg:grid-cols-2 flex-col lg:flex-row">
-      <div>
-        <TitleContainer>
-          <h2 className="font-montserrat text-white text-3xl text-center lg:text-left">
+      <div className="lg:flex lg:flex-col">
+        <TitleContainer className="lg:self-end">
+          <h2 className="font-montserrat text-white text-3xl lg:text-7xl text-center lg:text-left">
             {eventName &&
               eventName.map((p, i) => <ParagraphText {...p} key={i} />)}
           </h2>
-          <p className="font-poppins text-white text-base text-center lg:text-left mt-10">
+          <p className="font-poppins text-white text-base text-center lg:text-left mt-10 lg:mt-5 tracking-widest">
             {sponsorInfo &&
               sponsorInfo.map((p, i) => <ParagraphText {...p} key={i} />)}
           </p>
@@ -89,18 +97,8 @@ const FeatureEventHero = (props: FeatureEventType) => {
         <CTAbuttons meetupLink={props.meetupLink} eventDate={props.eventDate} />
       </div>
       <div className="hidden lg:block">
-        <ImageContainer
-          className="rounded-full border-4 border-secondary p-4"
-          style={{
-            maxWidth: '30rem',
-          }}
-        >
-          <div
-            className="rounded-full"
-            style={{
-              maxWidth: '30rem',
-            }}
-          >
+        <ImageContainer className="rounded-full border-4 border-secondary p-4">
+          <div className="rounded-full">
             {props?.eventImage && (
               <GraphImg
                 image={props?.eventImage}

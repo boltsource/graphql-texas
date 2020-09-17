@@ -1,7 +1,8 @@
 import React from 'react'
 import GraphImg from 'graphcms-image'
-
 import styled from '@emotion/styled'
+
+import { TitleWrapper } from '../base-layout'
 
 // position: relative;
 const ProfileContainer = styled.div`
@@ -132,18 +133,12 @@ interface OurSpeakersProps {
   }
 }
 
-// const TitleWrapper = styled.div`
-//   @media (min-width: 1024px) {
-//     display: block;
-//   }
-// `
-
 const OurSpeakers = (props: OurSpeakersProps) => {
   return (
     <div>
-      <div className="lg:block">
-        <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2">{`<Our Speakers />`}</h3>
-      </div>
+      <TitleWrapper>
+        <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2 lg:block lg:bg-primary relative lg:px-16">{`<Our Speakers />`}</h3>
+      </TitleWrapper>
       <div className="lg:grid lg:grid-cols-3 lg:my-10">
         {props.ourSpeakers &&
           props.ourSpeakers.map(speaker => (

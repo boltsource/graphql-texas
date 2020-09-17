@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+import { TitleWrapper } from '../base-layout'
+
 const StyledImage = styled.img`
   position: relative;
   display: block;
@@ -69,7 +71,9 @@ const Sponsor = (props: SponsorProps) => {
 const Sponsors = (props: SponsorsProps) => {
   return (
     <div className="mb-24">
-      <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2">{`<Sponsors />`}</h3>
+      <TitleWrapper>
+        <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2  lg:block lg:bg-primary relative lg:px-16">{`<Sponsors />`}</h3>
+      </TitleWrapper>
       <div className="lg:w-full lg:flex lg:justify-center">
         <div className="grid grid-cols-3 mt-16 lg:w-9/12">
           {props?.sponsors &&

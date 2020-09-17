@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import moment from 'moment'
 import styled from '@emotion/styled'
+import { TitleWrapper } from '../base-layout'
 
 import ParagraphText from '../paragraph-text'
 
@@ -136,7 +137,9 @@ interface SchedulePropTypes {
 const Schedule = (props: SchedulePropTypes) => {
   return (
     <div className="my-24">
-      <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2">{`<Schedule />`}</h3>
+      <TitleWrapper>
+        <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2 lg:block lg:bg-primary relative lg:px-16">{`<Schedule />`}</h3>
+      </TitleWrapper>
       <div className="flex flex-col">
         {props?.timeSections.map(({ id, ...section }) => (
           <TimeSection key={id} {...{ ...section }} />
