@@ -9,6 +9,24 @@ const StyledImage = styled.img`
   @media (min-width: 1024px) {
     height: 55px;
   }
+  ${props =>
+    props?.imageEffect &&
+    props.imageEffect === 'first-logo' &&
+    `
+    mix-blend-mode: screen;
+  `}
+  ${props =>
+    props?.imageEffect &&
+    props.imageEffect === 'second-logo' &&
+    `
+    mix-blend-mode: luminosity;
+  `}
+  ${props =>
+    props?.imageEffect &&
+    props.imageEffect === 'third-logo' &&
+    `
+    mix-blend-mode: color-dodge;
+  `}
 `
 
 interface SponsorProps {
@@ -20,6 +38,7 @@ interface SponsorProps {
     width: number
     height: number
   }
+  imageEffect?: string
 }
 
 interface SponsorsProps {
@@ -40,6 +59,7 @@ const Sponsor = (props: SponsorProps) => {
       >
         <StyledImage
           src={`https://media.graphcms.com/${props?.sponsorLogo.handle}`}
+          imageEffect={props?.imageEffect}
         />
       </a>
     </div>
@@ -55,19 +75,39 @@ const Sponsors = (props: SponsorsProps) => {
           {props?.sponsors &&
             props?.sponsors.map(({ id, ...s }, i) => {
               let idx = i + 1
-              console.log({ idx })
               if (idx === 1 || i % 4 == 0) {
                 return (
-                  <Sponsor key={id} {...{ ...s, className: 'items-star' }} />
+                  <Sponsor
+                    key={id}
+                    {...{
+                      ...s,
+                      className: 'items-star',
+                      imageEffect: 'first-logo',
+                    }}
+                  />
                 )
               }
               if (idx % 3 == 0) {
                 return (
-                  <Sponsor key={id} {...{ ...s, className: 'items-end' }} />
+                  <Sponsor
+                    key={id}
+                    {...{
+                      ...s,
+                      className: 'items-end',
+                      imageEffect: 'third-logo',
+                    }}
+                  />
                 )
               }
               return (
-                <Sponsor key={id} {...{ ...s, className: 'items-center' }} />
+                <Sponsor
+                  key={id}
+                  {...{
+                    ...s,
+                    className: 'items-center',
+                    imageEffect: 'second-logo',
+                  }}
+                />
               )
             })}
         </div>

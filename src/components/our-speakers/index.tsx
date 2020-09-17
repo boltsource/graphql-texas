@@ -132,10 +132,18 @@ interface OurSpeakersProps {
   }
 }
 
+// const TitleWrapper = styled.div`
+//   @media (min-width: 1024px) {
+//     display: block;
+//   }
+// `
+
 const OurSpeakers = (props: OurSpeakersProps) => {
   return (
     <div>
-      <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2">{`<Our Speakers />`}</h3>
+      <div className="lg:block">
+        <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2">{`<Our Speakers />`}</h3>
+      </div>
       <div className="lg:grid lg:grid-cols-3 lg:my-10">
         {props.ourSpeakers &&
           props.ourSpeakers.map(speaker => (
