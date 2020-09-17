@@ -21,7 +21,6 @@ const BackgroundContainer = styled.div`
       right: 0;
       height: 279px;
       position: absolute;
-    
   }
 `
 
@@ -60,7 +59,7 @@ const CtaBanner = (props: CtaBannerProps) => {
             <StyledAnchor
               href={props?.ctaLink}
               target="_blank"
-              className="bg-primary text-white font-normal font-poppins py-3 px-10 lg:px-6 border-white border-2 text-base mt-10 text-center cursor-pointer"
+              className="bg-quinary text-white font-normal font-poppins py-3 px-10 lg:px-6 border-white border-2 text-base mt-10 text-center cursor-pointer"
             >
               Become a sponsor
             </StyledAnchor>

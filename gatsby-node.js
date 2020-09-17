@@ -21,6 +21,7 @@ exports.createPages = async ({ actions, graphql }) => {
           titleTag
           metaDescription
           metaKeywords
+          copyright
           featureEvent {
             eventImage {
               handle

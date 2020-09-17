@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Header from '../header'
+import Copyright from '../copyright'
 
 interface BaseLayoutProp {
   children: JSX.Element | JSX.Element[]
@@ -14,6 +15,7 @@ const BaseLayout = ({ children }: BaseLayoutProp) => {
         <div className={`flex flex-col items-center mt-10 lg:mt-32`}>
           {children}
         </div>
+        <Copyright />
       </div>
     </div>
   )

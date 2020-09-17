@@ -43,6 +43,7 @@ type TemplateProps = {
     id: string
     path: string
   }
+  copyright?: string
   titleTag: string
   metaDescription: string
   metaKeywords: string
