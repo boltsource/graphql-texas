@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import moment from 'moment'
 import styled from '@emotion/styled'
 import { TitleWrapper } from '../base-layout'
@@ -37,12 +37,20 @@ const Arrow = props => {
   )
 }
 
+const ContainerAnimator = styled.div``
+
+const TimeSectionsContainer = styled.div`
+  max-width: 100%;
+  @media (min-width: 1024px) {
+    max-width: 1110px;
+  }
+`
+
 const TimeSection = props => {
   const [isOpenCard, setIsOpenCard] = useState(false)
-  const containerRef = useRef(null)
   return (
-    <div
-      className="max-w-full rounded-lg overflow-hidden bg-secondary mt-10 relative cursor-pointer"
+    <TimeSectionsContainer
+      className="rounded-lg overflow-hidden bg-secondary mt-10 relative cursor-pointer"
       onClick={() => setIsOpenCard(!isOpenCard)}
       tabIndex={0}
     >
@@ -71,11 +79,8 @@ const TimeSection = props => {
                 {props?.author}
               </p>
             )}
-            <div
-              ref={containerRef}
-              className={`relative overflow-hidden transition-all ease-out duration-1000 hidden lg:block ${
-                !isOpenCard ? 'max-h-0' : ''
-              }`}
+            <ContainerAnimator
+              className={`relative overflow-hidden transition-all ease-out duration-1000 hidden lg:block`}
             >
               <p className="text-center lg:text-left lg:mb-4">
                 {props.description &&
@@ -87,7 +92,7 @@ const TimeSection = props => {
                     />
                   ))}
               </p>
-            </div>
+            </ContainerAnimator>
           </div>
         </div>
         <p
@@ -99,7 +104,6 @@ const TimeSection = props => {
           {props?.author}
         </p>
         <div
-          ref={containerRef}
           className={`relative overflow-hidden transition-all ease-out duration-1000 lg:hidden ${
             !isOpenCard ? 'max-h-0' : ''
           }`}
@@ -116,7 +120,7 @@ const TimeSection = props => {
           </p>
         </div>
       </div>
-    </div>
+    </TimeSectionsContainer>
   )
 }
 
@@ -167,7 +171,7 @@ const Schedule = (props: SchedulePropTypes) => {
       <TitleWrapper>
         <StyledHeading className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2 lg:block lg:bg-primary relative lg:px-10">{`<Schedule />`}</StyledHeading>
       </TitleWrapper>
-      <div className="flex flex-col">
+      <div className="flex flex-col items-center">
         {props?.timeSections.map(({ id, ...section }) => (
           <TimeSection key={id} {...{ ...section }} />
         ))}
