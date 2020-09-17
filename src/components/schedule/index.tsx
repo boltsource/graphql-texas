@@ -134,11 +134,38 @@ interface SchedulePropTypes {
   }[]
 }
 
+const StyledHeading = styled.h3`
+  @media (min-width: 1024px) {
+    margin-left: 110px;
+    &:before {
+      position: absolute;
+      content: '';
+      background-color: #024959;
+      height: 10px;
+      width: 10px;
+      border-radius: 50px;
+      top: 21px;
+      left: -4px;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      background-color: #024959;
+      height: 10px;
+      width: 10px;
+      border-radius: 50px;
+      top: 21px;
+      right: -4px;
+    }
+  }
+`
+
 const Schedule = (props: SchedulePropTypes) => {
   return (
     <div className="my-24">
       <TitleWrapper>
-        <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2 lg:block lg:bg-primary relative lg:px-16">{`<Schedule />`}</h3>
+        <StyledHeading className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2 lg:block lg:bg-primary relative lg:px-10">{`<Schedule />`}</StyledHeading>
       </TitleWrapper>
       <div className="flex flex-col">
         {props?.timeSections.map(({ id, ...section }) => (

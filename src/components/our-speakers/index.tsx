@@ -133,11 +133,39 @@ interface OurSpeakersProps {
   }
 }
 
+const StyledHeading = styled.h3`
+  @media (min-width: 1024px) {
+    position: relative;
+    margin-left: 110px;
+    &:before {
+      position: absolute;
+      content: '';
+      background-color: #024959;
+      height: 10px;
+      width: 10px;
+      border-radius: 50px;
+      top: 21px;
+      left: -4px;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      background-color: #024959;
+      height: 10px;
+      width: 10px;
+      border-radius: 50px;
+      top: 21px;
+      right: -4px;
+    }
+  }
+`
+
 const OurSpeakers = (props: OurSpeakersProps) => {
   return (
     <div>
       <TitleWrapper>
-        <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2 lg:block lg:bg-primary relative lg:px-16">{`<Our Speakers />`}</h3>
+        <StyledHeading className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2 lg:block lg:bg-primary relative lg:px-10">{`<Our Speakers />`}</StyledHeading>
       </TitleWrapper>
       <div className="lg:grid lg:grid-cols-3 lg:my-10">
         {props.ourSpeakers &&

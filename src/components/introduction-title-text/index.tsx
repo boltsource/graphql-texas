@@ -63,7 +63,7 @@ const TextWrapper = styled.div`
 
 const IntroductionTitleText = (props: IntroductionTitleTextProps) => {
   return (
-    <Container className="mt-10 flex flex-col lg:grid lg:grid-cols-2 pb-10 lg:pb-64">
+    <Container className="mt-10 flex flex-col lg:grid lg:grid-cols-2 pb-10 lg:mb-20">
       <div className="lg:flex items-start lg:relative">
         <BoxDecoration />
         <TextContainer>
