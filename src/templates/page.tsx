@@ -7,6 +7,7 @@ import IntroductionTitleText from '../components/introduction-title-text'
 import OurSpeakers from '../components/our-speakers'
 import Schedule from '../components/schedule'
 import SectionTextImage from '../components/section-text-image'
+import Sponsors from '../components/sponsors'
 
 import { TextRichType, FeatureEventType } from '../types'
 
@@ -80,7 +81,7 @@ type TemplateProps = {
     width: number
     height: number
   }
-  sponsors: {
+  sponsors?: {
     id: string
     websiteLink: string
     altDescription: string
@@ -89,7 +90,7 @@ type TemplateProps = {
       width: number
       height: number
     }
-  }
+  }[]
 }
 
 const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
@@ -111,6 +112,7 @@ const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
           secondarySectionImage={pageContext?.secondarySectionImage}
           secondarySectionText={pageContext?.secondarySectionText}
         />
+        <Sponsors sponsors={pageContext?.sponsors} />
       </div>
     </BaseLayout>
   )

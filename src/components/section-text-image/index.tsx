@@ -29,7 +29,6 @@ interface SectionTextImageProps {
 }
 
 const SectionTextImage = (props: SectionTextImageProps) => {
-  console.log({ props })
   return (
     <div className="my-32 lg:flex lg:flex-row-reverse">
       <div className="mb-10 lg:mb-0 lg:w-2/5 lg:pb-5">
