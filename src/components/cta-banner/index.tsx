@@ -40,7 +40,7 @@ interface CtaBannerProps {
 
 const CtaBanner = (props: CtaBannerProps) => {
   return (
-    <div className="lg:mt-20">
+    <div className="lg:my-20">
       <BackgroundContainer className="h-10 w-full bg-quinary lg:hidden" />
       <BackgroundContainer className="pb-10">
         <div className="flex flex-col items-center lg:bg-quinary lg:py-20 lg:rounded-lg">

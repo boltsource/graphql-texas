@@ -41,7 +41,7 @@ const TimeSection = props => {
   const containerRef = useRef(null)
   return (
     <div
-      className="max-w-full rounded overflow-hidden bg-secondary mt-10 relative cursor-pointer"
+      className="max-w-full rounded-lg overflow-hidden bg-secondary mt-10 relative cursor-pointer"
       onClick={() => setIsOpenCard(!isOpenCard)}
       tabIndex={0}
     >
