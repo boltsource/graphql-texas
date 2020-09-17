@@ -50,7 +50,7 @@ const IntroductionTitleText = (props: IntroductionTitleTextProps) => {
         </TextContainer>
       </div>
       <div className="mt-8 lg:mt-0">
-        <div className="font-poppins text-xl text-white text-center lg:text-left lg:max-w-xl">
+        <p className="font-poppins text-xl text-white text-center lg:text-left lg:max-w-xl">
           {props.text &&
             props.text?.raw?.children?.map(p => (
               <ParagraphText
@@ -59,7 +59,7 @@ const IntroductionTitleText = (props: IntroductionTitleTextProps) => {
                 className="font-light"
               />
             ))}
-        </div>
+        </p>
       </div>
     </div>
   )

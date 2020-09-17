@@ -18,7 +18,7 @@ const ParagraphText = ({
         <span
           className={`${
             p?.bold ? 'font-bold' : className || 'font-normal'
-          } ${additionalClassNames}`}
+          } ${additionalClassNames} relative`}
         >
           {p.text}
         </span>

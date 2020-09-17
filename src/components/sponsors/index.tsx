@@ -47,9 +47,8 @@ const Sponsor = (props: SponsorProps) => {
 }
 
 const Sponsors = (props: SponsorsProps) => {
-  console.log({ props })
   return (
-    <div className="mb-20">
+    <div className="mb-24">
       <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2">{`<Sponsors />`}</h3>
       <div className="lg:w-full lg:flex lg:justify-center">
         <div className="grid grid-cols-3 mt-16 lg:w-9/12">

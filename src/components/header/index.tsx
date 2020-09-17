@@ -47,7 +47,7 @@ const Header = () => {
           <li key={id}>
             <TextMarked className="mr-2" isMarked>
               <Link
-                className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer"
+                className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer relative"
                 to={slug.path}
                 style={{
                   zIndex: 2,
@@ -61,7 +61,7 @@ const Header = () => {
         <li>
           <TextMarked className="mr-2">
             <Link
-              className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer"
+              className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer relative"
               to="/"
               style={{
                 zIndex: 2,
@@ -74,7 +74,7 @@ const Header = () => {
         <li>
           <TextMarked className="mr-2">
             <Link
-              className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer"
+              className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer relative"
               to="/"
               style={{
                 zIndex: 2,

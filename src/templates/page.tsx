@@ -8,6 +8,7 @@ import OurSpeakers from '../components/our-speakers'
 import Schedule from '../components/schedule'
 import SectionTextImage from '../components/section-text-image'
 import Sponsors from '../components/sponsors'
+import CtaBanner from '../components/cta-banner'
 
 import { TextRichType, FeatureEventType } from '../types'
 
@@ -91,6 +92,18 @@ type TemplateProps = {
       height: number
     }
   }[]
+  bannerCTA: {
+    ctaLink?: string
+    bannerTitle: string
+    bannerDescription: {
+      raw?: {
+        children?: {
+          type: 'paragraph'
+          children?: TextRichType[]
+        }[]
+      }
+    }
+  }
 }
 
 const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
@@ -113,6 +126,7 @@ const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
           secondarySectionText={pageContext?.secondarySectionText}
         />
         <Sponsors sponsors={pageContext?.sponsors} />
+        <CtaBanner {...pageContext.bannerCTA} />
       </div>
     </BaseLayout>
   )

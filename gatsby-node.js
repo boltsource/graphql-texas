@@ -82,6 +82,13 @@ exports.createPages = async ({ actions, graphql }) => {
               height
             }
           }
+          bannerCTA {
+            ctaLink
+            bannerTitle
+            bannerDescription {
+              raw
+            }
+          }
         }
       }
     }
