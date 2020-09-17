@@ -49,6 +49,9 @@ const Header = () => {
               <Link
                 className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer"
                 to={slug.path}
+                style={{
+                  zIndex: 2,
+                }}
               >
                 {title}
               </Link>
@@ -60,6 +63,9 @@ const Header = () => {
             <Link
               className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer"
               to="/"
+              style={{
+                zIndex: 2,
+              }}
             >
               Past Events
             </Link>
@@ -70,6 +76,9 @@ const Header = () => {
             <Link
               className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer"
               to="/"
+              style={{
+                zIndex: 2,
+              }}
             >
               Call for papers
             </Link>

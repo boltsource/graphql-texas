@@ -1,18 +1,21 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
 
 const LineMark = styled.span`
   position: relative;
-`
 
-const mark = css`
-  position: absolute;
-  content: '';
-  height: 30%;
-  width: 100%;
-  bottom: 0;
-  left: 0;
+  ${props =>
+    props?.isMarked &&
+    `&:before {
+    position: absolute;
+    content: '';
+    height: 30%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    opacity: .5;
+    background-color: #3991A4;
+  `}
 `
 
 interface TextMarkedProps {
@@ -27,10 +30,9 @@ const TextMarked = ({
   isMarked = false,
 }: TextMarkedProps) => {
   return (
-    <span className={`${className} relative`}>
+    <LineMark isMarked={isMarked} className={`${className} lg:mb-5`}>
       {children}
-      <LineMark css={isMarked ? mark : {}} className="bg-tertiary" />
-    </span>
+    </LineMark>
   )
 }
 

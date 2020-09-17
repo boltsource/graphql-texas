@@ -10,12 +10,14 @@ import CalendarIcon from '../calendar-icon'
 import { FeatureEventType } from '../../types'
 
 const StyledLink = styled(Link)`
+  z-index: 2;
   @media (min-width: 1024px) {
     min-width: 11.25rem;
   }
 `
 
 const StyledAnchor = styled.a`
+  z-index: 2;
   @media (min-width: 1024px) {
     min-width: 17.75rem;
   }

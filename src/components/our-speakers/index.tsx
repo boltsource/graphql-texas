@@ -34,6 +34,7 @@ const Twitter = props => {
       className="flex flex-row items-center font-poppins font-normal cursor-pointer"
       style={{
         color: 'rgba(255, 255, 255, 0.7)',
+        zIndex: 2,
       }}
     >
       <svg width={33} height={32} viewBox="0 0 33 32" fill="none">
@@ -60,10 +61,11 @@ const Github = props => {
     <a
       href={props?.githubLink}
       target="_blank"
-      className="flex flex-row items-center font-poppins font-normal cursor-pointer"
+      className="flex flex-row items-center font-poppins font-normal"
       style={{
         color: 'rgba(255, 255, 255, 0.7)',
         marginLeft: '1rem',
+        zIndex: 2,
       }}
     >
       <svg width={33} height={32} viewBox="0 0 33 32" fill="none">

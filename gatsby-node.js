@@ -64,6 +64,24 @@ exports.createPages = async ({ actions, graphql }) => {
             githubLink
             twitterLink
           }
+          secondarySectionText {
+            raw
+          }
+          secondarySectionImage {
+            handle
+            width
+            height
+          }
+          sponsors {
+            id
+            websiteLink
+            altDescription
+            sponsorLogo {
+              handle
+              width
+              height
+            }
+          }
         }
       }
     }

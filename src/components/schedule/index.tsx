@@ -40,10 +40,14 @@ const TimeSection = props => {
   const [isOpenCard, setIsOpenCard] = useState(false)
   const containerRef = useRef(null)
   return (
-    <div className="max-w-sm lg:max-w-full rounded overflow-hidden bg-secondary mt-10 relative">
+    <div
+      className="max-w-full rounded overflow-hidden bg-secondary mt-10 relative cursor-pointer"
+      onClick={() => setIsOpenCard(!isOpenCard)}
+      tabIndex={0}
+    >
       <Arrow
         onClick={() => setIsOpenCard(!isOpenCard)}
-        rotate={isOpenCard ? true : undefined}
+        rotate={isOpenCard ? 'true' : undefined}
       />
       <div className="px-6 py-4">
         <div className="flex flex-col lg:flex-row lg:items-start justify-start">

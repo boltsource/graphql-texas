@@ -6,6 +6,7 @@ import FeatureEventHero from '../components/feature-event-hero'
 import IntroductionTitleText from '../components/introduction-title-text'
 import OurSpeakers from '../components/our-speakers'
 import Schedule from '../components/schedule'
+import SectionTextImage from '../components/section-text-image'
 
 import { TextRichType, FeatureEventType } from '../types'
 
@@ -66,6 +67,29 @@ type TemplateProps = {
     githubLink: string
     twitterLink: string
   }[]
+  secondarySectionText: {
+    raw?: {
+      children?: {
+        type: 'paragraph'
+        children?: TextRichType[]
+      }[]
+    }
+  }
+  secondarySectionImage: {
+    handle: string
+    width: number
+    height: number
+  }
+  sponsors: {
+    id: string
+    websiteLink: string
+    altDescription: string
+    sponsorLogo: {
+      handle: string
+      width: number
+      height: number
+    }
+  }
 }
 
 const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
@@ -82,6 +106,10 @@ const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
         <Schedule
           speakers={pageContext?.featureEvent?.speakers}
           {...pageContext.featureEvent.schedule}
+        />
+        <SectionTextImage
+          secondarySectionImage={pageContext?.secondarySectionImage}
+          secondarySectionText={pageContext?.secondarySectionText}
         />
       </div>
     </BaseLayout>
