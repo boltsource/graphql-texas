@@ -163,7 +163,7 @@ const StyledHeading = styled.h3`
 
 const Schedule = (props: SchedulePropTypes) => {
   return (
-    <div className="my-24">
+    <div className="mb-24 mt-32">
       <TitleWrapper>
         <StyledHeading className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2 lg:block lg:bg-primary relative lg:px-10">{`<Schedule />`}</StyledHeading>
       </TitleWrapper>
