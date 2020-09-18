@@ -12,82 +12,85 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const { data } = await graphql(`
     query {
-      gcms {
-        pages {
-          slug {
+      allGraphCmsPage {
+        edges {
+          node {
             id
-            path
-          }
-          titleTag
-          metaDescription
-          metaKeywords
-          copyright
-          featureEvent {
-            eventImage {
-              handle
-              width
-              height
+            titleTag
+            metaDescription
+            metaKeywords
+            copyright
+            slug {
+              id
+              path
             }
-            meetupLink
-            eventDate
-            name {
-              raw
-            }
-            sponsorInfo {
-              raw
-            }
-            schedule {
-              timeSections {
-                author
-                id
-                title
-                eventDateTime
-                description {
-                  raw
+            featureEvent {
+              eventImage {
+                handle
+                width
+                height
+              }
+              meetupLink
+              eventDate
+              name {
+                raw
+              }
+              sponsorInfo {
+                raw
+              }
+              schedule {
+                timeSections {
+                  author
+                  id
+                  title
+                  eventDateTime
+                  description {
+                    raw
+                  }
                 }
               }
             }
-          }
-          mainSectionTitle
-          mainSectionDescription {
-            raw
-          }
-          ourSpeakers {
-            id
-            profileImage {
-              handle
-              width
-              height
-            }
-            name
-            role
-            companyName
-            githubLink
-            twitterLink
-          }
-          secondarySectionText {
-            raw
-          }
-          secondarySectionImage {
-            handle
-            width
-            height
-          }
-          sponsors {
-            id
-            websiteLink
-            altDescription
-            sponsorLogo {
-              handle
-              width
-              height
-            }
-          }
-          bannerCTA {
-            ctaLink
-            bannerTitle
-            bannerDescription {
+            mainSectionTitle
+            mainSectionDescription {
               raw
+            }
+            ourSpeakers {
+              id
+              profileImage {
+                handle
+                width
+                height
+              }
+              name
+              role
+              companyName
+              githubLink
+              twitterLink
+            }
+            secondarySectionText {
+              raw
+            }
+            secondarySectionImage {
+              handle
+              width
+              height
+            }
+            sponsors {
+              id
+              websiteLink
+              altDescription
+              sponsorLogo {
+                handle
+                width
+                height
+              }
+            }
+            bannerCTA {
+              ctaLink
+              bannerTitle
+              bannerDescription {
+                raw
+              }
             }
           }
         }
@@ -100,7 +103,7 @@ exports.createPages = async ({ actions, graphql }) => {
   // Only publish pages with a `status === 'publish'` in production. This
   // excludes drafts, future posts, etc. They will appear in development,
   // but not in a production build.
-  const allPages = data.gcms.pages
+  const allPages = data.allGraphCmsPage.edges.map(edge => edge.node);
   // const pages =
   //   process.env.NODE_ENV === 'production'
   //     ? getOnlyPublished(allPages)

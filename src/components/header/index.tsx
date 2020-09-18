@@ -6,17 +6,17 @@ import Logo from '../logo'
 import TextMarked from '../text-marked'
 
 interface HeaderheaderDataStateType {
-  gcms: {
-    menu: {
-      pages: {
+  graphCmsMenu: {
+    id: string,
+    name: string,
+    pages: {
+      id: string
+      title: string
+      slug: {
+        path: string
         id: string
-        title: string
-        slug: {
-          path: string
-          id: string
-        }
-      }[]
-    }
+      }
+    }[]
   }
 }
 
@@ -27,25 +27,28 @@ const StyledList = styled.ul`
 `
 
 const Header = () => {
-  const {
-    gcms: {
-      menu: { pages },
-    },
-  }: HeaderheaderDataStateType = useStaticQuery(graphql`
-    query GetMainMenu {
-      gcms {
-        menu(where: { name: "Main" }) {
-          pages {
+  const data: HeaderheaderDataStateType = useStaticQuery(graphql`
+    query {
+      graphCmsMenu(name: {eq: "Main"}) {
+        id
+        name
+        pages {
+          id
+          title
+          slug {
+            path
             id
-            title
-            slug {
-              path
-            }
           }
         }
       }
     }
   `)
+
+  const {
+    graphCmsMenu: {
+      pages
+    },
+  } = data;
 
   return (
     <div className="bg-primary pt-5 lg:pt-10 border-secondary flex flex-row items-center justify-between">
@@ -66,32 +69,6 @@ const Header = () => {
             </TextMarked>
           </li>
         ))}
-        <li>
-          <TextMarked className="mr-6">
-            <Link
-              className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer relative"
-              to="/"
-              style={{
-                zIndex: 2,
-              }}
-            >
-              Past Events
-            </Link>
-          </TextMarked>
-        </li>
-        <li>
-          <TextMarked className="mr-2">
-            <Link
-              className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer relative"
-              to="/"
-              style={{
-                zIndex: 2,
-              }}
-            >
-              Call for papers
-            </Link>
-          </TextMarked>
-        </li>
       </StyledList>
     </div>
   )

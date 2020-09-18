@@ -17,16 +17,17 @@ module.exports = {
       'consulting,contracting,software development,software engineering,engineering leadership,product development,software as a service, saas,graphql,reactjs,react native,kubernetes,cloud native,software architecture,consultants,contractors',
   },
   plugins: [
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
-      resolve: 'gatsby-source-graphql',
+      resolve: 'gatsby-source-graphcms',
       options: {
-        typeName: 'GCMS',
-        fieldName: 'gcms',
-        url: process.env.GRAPHCMS_ENDPOINT,
+        endpoint: process.env.GRAPHCMS_ENDPOINT,
+        downloadLocalImages: true,
+        buildMarkdownNodes: true,
+        fragmentsPath: './.cache/graphcms-fragments'
       },
     },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-theme-tailwindcss',
       options: {
