@@ -14,11 +14,15 @@ const ParagraphText = ({
 }) => {
   if (type === 'paragraph' && children) {
     return children.map((p, i) => (
-      <TextMarked key={i} isMarked={p.underline || false}>
+      <TextMarked
+        key={i}
+        isMarked={p.underline || false}
+        className={additionalClassNames}
+      >
         <span
           className={`${
             p?.bold ? 'font-bold' : className || 'font-normal'
-          } ${additionalClassNames} relative`}
+          } relative`}
         >
           {p.text}
         </span>

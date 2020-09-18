@@ -29,7 +29,7 @@ const TextMarked = ({
   isMarked = false,
 }: TextMarkedProps) => {
   return (
-    <LineMark isMarked={isMarked} className={`${className} lg:mb-5`}>
+    <LineMark isMarked={isMarked} className={`lg:mb-5 ${className}`}>
       {children}
     </LineMark>
   )
