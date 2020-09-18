@@ -1,12 +1,5 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's GraphQL Texas starter
-</h1>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/af2587c3-2774-408e-adfe-cf754e82618a/deploy-status)](https://app.netlify.com/sites/graphql-texas/deploys)
+
 
 Kick off your project with this graphql-texas boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 

@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 /**
  * Configure your Gatsby site with this file.
  *
@@ -6,7 +8,7 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'BoltSource',
+    title: 'GraphQL Texas',
     description:
       'We partner with companies to build amazing digital experiences.  Expert software engineers for web, mobile, and cloud native',
     author: '@boltsourceio',

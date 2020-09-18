@@ -26,7 +26,7 @@ const SvgGeometry = styled.svg`
   }
 `
 
-const GeometryDecoration = props => {
+const GeometryDecoration = (props: any) => {
   return (
     <SvgGeometry viewBox="0 0 1440 797" fill="none" {...props}>
       <path
