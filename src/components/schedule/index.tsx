@@ -29,64 +29,6 @@ const StyledSvg = styled.svg`
   }
 `
 
-const Arrow = props => {
-  return (
-    <StyledSvg
-      width={12}
-      height={12}
-      viewBox="0 0 12 12"
-      fill="none"
-      className="cursor-pointer"
-      {...props}
-    >
-      <path
-        d="M6 2.292l-6 6 1.415 1.415L6 5.122l4.585 4.585L12 8.292l-6-6z"
-        fill="#fff"
-      />
-    </StyledSvg>
-  )
-}
-
-const InnerAnimator = styled.div`
-  max-height: 0;
-  overflow: hidden;
-  text-transform: cubic-bezier(0.95, 0.05, 0.795, 0.035);
-  transition-duration: 0.5s;
-  transition-property: max-height;
-  z-index: 1;
-  position: relative;
-  ${props =>
-    props.isOpen &&
-    `
-  max-height: 100rem;
-  transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition-duration: 0.5s;
-  transition-property: max-height;
-  `}
-`
-
-const ContainerAnimator = styled.div`
-  opacity: 0;
-  transform: translateY(-1rem);
-  transition-timing-function: linear, ease;
-  transition-duration: 0.1s;
-  transition-property: opacity, transform;
-  transition-delay: 0.5s;
-  ${props =>
-    props.isOpen &&
-    `
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.2s;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.2s;
-    transition-property: opacity, transform;
-  `}
-  @media (min-width: 1024px) {
-    margin-top: 55px;
-  }
-`
-
 const TimeSectionContainer = styled.div`
   max-width: 100%;
   @media (min-width: 1024px) {
@@ -111,17 +53,10 @@ const StyledParagraph = styled.div`
 `
 
 const TimeSection = props => {
-  const [isOpenCard, setIsOpenCard] = useState(false)
   return (
     <TimeSectionContainer
-      className="rounded-lg overflow-hidden bg-secondary mt-10 relative cursor-pointer"
-      onClick={() => setIsOpenCard(!isOpenCard)}
-      tabIndex={0}
+      className="rounded-lg overflow-hidden bg-secondary mt-10 relative"
     >
-      <Arrow
-        onClick={() => setIsOpenCard(!isOpenCard)}
-        rotate={isOpenCard ? 'true' : undefined}
-      />
       <StyledCard className="px-6 py-4">
         <div className="flex flex-col lg:flex-row lg:items-start justify-start">
           <div className="lg:w-32">
@@ -133,23 +68,20 @@ const TimeSection = props => {
             <p className="text-white font-semibold font-montserrat text-center lg:text-left text-xl mb-2">
               {props?.title}
             </p>
-            <InnerAnimator isOpen={isOpenCard ? 'true' : null}>
-              <ContainerAnimator
-                className={`relative overflow-hidden transition-all ease-out duration-1000 hidden lg:block tracking-normal`}
-                isOpen={isOpenCard ? 'true' : null}
-              >
-                <p className="text-center lg:text-left lg:mb-4">
-                  {props.description &&
-                    props.description?.raw?.children?.map(p => (
-                      <ParagraphText
-                        key={JSON.stringify(p)}
-                        {...p}
-                        additionalClassNames="font-poppins text-white text-base lg:text-lg"
-                      />
-                    ))}
-                </p>
-              </ContainerAnimator>
-            </InnerAnimator>
+            <div
+              className={`relative overflow-hidden transition-all ease-out duration-1000 hidden lg:block tracking-normal`}
+            >
+              <p className="text-center lg:text-left lg:mb-4">
+                {props.description &&
+                  props.description?.raw?.children?.map(p => (
+                    <ParagraphText
+                      key={JSON.stringify(p)}
+                      {...p}
+                      additionalClassNames="font-poppins text-white text-base lg:text-lg"
+                    />
+                  ))}
+              </p>
+            </div>
           </div>
         </div>
         {props?.author && (
@@ -163,9 +95,7 @@ const TimeSection = props => {
           </StyledParagraph>
         )}
         <div
-          className={`relative overflow-hidden transition-all ease-out duration-1000 lg:hidden ${
-            !isOpenCard ? 'max-h-0' : ''
-          }`}
+          className={`relative overflow-hidden transition-all ease-out duration-1000 lg:hidden max-h-0`}
         >
           <p className="text-center lg:text-left">
             {props.description &&
