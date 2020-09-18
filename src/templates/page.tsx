@@ -22,6 +22,7 @@ const SvgGeometry = styled.svg`
     left: 0;
     height: auto;
     display: flex;
+    max-height: 1442px;
   }
 `
 
