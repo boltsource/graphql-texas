@@ -54,9 +54,7 @@ const StyledParagraph = styled.div`
 
 const TimeSection = props => {
   return (
-    <TimeSectionContainer
-      className="rounded-lg overflow-hidden bg-secondary mt-10 relative"
-    >
+    <TimeSectionContainer className="rounded-lg overflow-hidden bg-secondary mt-10 relative">
       <StyledCard className="px-6 py-4">
         <div className="flex flex-col lg:flex-row lg:items-start justify-start">
           <div className="lg:w-32">
@@ -133,7 +131,7 @@ const StyledHeading = styled.h3`
     &:before {
       position: absolute;
       content: '';
-      background-color: #024959;
+      background-color: #451040;
       height: 10px;
       width: 10px;
       border-radius: 50px;
@@ -144,7 +142,7 @@ const StyledHeading = styled.h3`
     &:after {
       position: absolute;
       content: '';
-      background-color: #024959;
+      background-color: #451040;
       height: 10px;
       width: 10px;
       border-radius: 50px;

@@ -39,7 +39,7 @@ const ImageContainer = styled.div`
   &:after {
     content: '';
     position: absolute;
-    background-image: url("data:image/svg+xml,%3Csvg width='148' height='211' viewBox='0 0 148 211' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M87.2767 3.12595L4.0522 68.404L147.139 201.093L87.2767 3.12595Z' fill='%23024959'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='148' height='211' viewBox='0 0 148 211' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M87.2767 3.12595L4.0522 68.404L147.139 201.093L87.2767 3.12595Z' fill='%23451040'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     height: 13rem;
     width: 10rem;

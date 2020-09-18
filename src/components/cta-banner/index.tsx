@@ -22,7 +22,7 @@ const BackgroundContainer = styled.div`
   @media (max-width: 1023px) {
     &:before {
       content: '';
-      background-color: #024959;
+      background-color: #451040;
       left: 0;
       right: 0;
       height: 279px;

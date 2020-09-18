@@ -31,7 +31,7 @@ const GeometryDecoration = (props: any) => {
     <SvgGeometry viewBox="0 0 1440 797" fill="none" {...props}>
       <path
         d="M1430 10v770.036L38.718 10H1430z"
-        stroke="#024959"
+        stroke="#451040"
         strokeOpacity={0.6}
         strokeWidth={20}
       />

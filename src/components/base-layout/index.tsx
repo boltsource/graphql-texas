@@ -15,7 +15,7 @@ export const TitleWrapper = styled.div`
     align-items: flex-start;
     &:before {
       content: '';
-      background-color: #024959;
+      background-color: #451040;
       right: -1000px;
       left: -1000px;
       top: calc(50% - 10px);

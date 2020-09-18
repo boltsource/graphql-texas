@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 const BackgroundContainer = styled.div`
   &:before {
     content: '';
-    background-color: #024959;
+    background-color: #451040;
     left: 0;
     right: 0;
     height: 50px;

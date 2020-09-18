@@ -13,7 +13,7 @@ const LineMark = styled.span`
     width: 100%;
     bottom: 0;
     left: 0;
-    background-color: #3991A4;
+    background-color: #9A1D77;
   `}
 `
 

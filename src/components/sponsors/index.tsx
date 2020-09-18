@@ -80,7 +80,7 @@ const StyledHeading = styled.h3`
     &:before {
       position: absolute;
       content: '';
-      background-color: #024959;
+      background-color: #451040;
       height: 10px;
       width: 10px;
       border-radius: 50px;
@@ -91,7 +91,7 @@ const StyledHeading = styled.h3`
     &:after {
       position: absolute;
       content: '';
-      background-color: #024959;
+      background-color: #451040;
       height: 10px;
       width: 10px;
       border-radius: 50px;
