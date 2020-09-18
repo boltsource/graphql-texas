@@ -123,10 +123,6 @@ const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
           speakers={pageContext?.featureEvent?.speakers}
           {...pageContext.featureEvent.schedule}
         />
-        <SectionTextImage
-          secondarySectionImage={pageContext?.secondarySectionImage}
-          secondarySectionText={pageContext?.secondarySectionText}
-        />
         <Sponsors sponsors={pageContext?.sponsors} />
         <CtaBanner {...pageContext.bannerCTA} />
       </div>

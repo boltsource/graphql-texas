@@ -126,7 +126,7 @@ const TimeSection = props => {
         <div className="flex flex-col lg:flex-row lg:items-start justify-start">
           <div className="lg:w-32">
             <p className="text-white font-poppins font-semibold text-base text-center lg:text-left mb-2 lg:mb-0 lg:mt-1">
-              {moment(props?.eventDateTime).format('h:mm A')}
+              {moment(props?.eventDateTime).format('h:mm A')} CST
             </p>
           </div>
           <div className="lg:ml-10">
