@@ -97,8 +97,10 @@ const CtaBanner = (props: CtaBannerProps) => {
                 ))}
             </p>
             <StyledAnchor
-              href={props?.ctaLink}
+              //@ts-ignore
+              href={encodeURI(props?.ctaLink)}
               target="_blank"
+              rel="noopener noreferrer"
               className="bg-quinary text-white font-normal font-poppins py-3 px-10 lg:px-5 border-white border-2 text-base lg:text-lg mt-10 text-center cursor-pointer"
             >
               Become a sponsor
