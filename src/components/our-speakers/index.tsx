@@ -19,7 +19,7 @@ const ProfileContainer = styled.div`
       display: block;
       background-repeat: no-repeat;
       top: 25px;
-      left: -52px;
+      left: -46px;
     }
   }
 `
