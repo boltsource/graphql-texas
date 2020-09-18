@@ -12,6 +12,10 @@ const StyledSvg = styled.svg`
   top: 28px;
   right: 20px;
   transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
   ${props =>
     props.rotate &&
     `
