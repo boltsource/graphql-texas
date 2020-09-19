@@ -7,7 +7,7 @@ const LineMark = styled.span`
   ${props =>
     props?.isMarked &&
     `
-    background-image: linear-gradient(120deg, #FF39BE 100%, #FF39BE 100%);
+    background-image: linear-gradient(120deg, #9A1D77 100%, #9A1D77 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: 0 88%;
