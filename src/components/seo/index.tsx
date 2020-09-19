@@ -26,11 +26,11 @@ const SEO = data => {
       <meta property="og:description" content={data?.metaDescription || ''} />
       <meta
         property="og:image"
-        content="https://og-image.vercel.app/og-image.png"
+        content="https://og-image-service-graphql-texas.vercel.app/og-image.png"
       />
       <meta
         property="twitter:image"
-        content="https://og-image.vercel.app/og-image.png"
+        content="https://og-image-service-graphql-texas.vercel.app/og-image.png"
       />
       <link
         rel="apple-touch-icon"
