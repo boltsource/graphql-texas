@@ -17,6 +17,7 @@ module.exports = {
       'consulting,contracting,software development,software engineering,engineering leadership,product development,software as a service, saas,graphql,reactjs,react native,kubernetes,cloud native,software architecture,consultants,contractors',
   },
   plugins: [
+    'gatsby-plugin-open-graph-images',
     {
       resolve: 'gatsby-source-graphcms',
       options: {

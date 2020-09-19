@@ -3,7 +3,7 @@
 const _ = require('lodash')
 const path = require('path')
 const { paginate } = require('gatsby-awesome-pagination')
-// const { createPrinterNode } = require('gatsby-plugin-printer')
+// const { createOpenGraphImage } = require('gatsby-plugin-open-graph-images')
 
 const getOnlyPublished = edges =>
   _.filter(edges, ({ node }) => node.status === 'publish')
@@ -114,17 +114,6 @@ exports.createPages = async ({ actions, graphql }) => {
   // Call `createPage()` once per GraphCMS page
   _.each(allPages, ({ id, ...page }) => {
     const fileName = `${page.slug.path === '/' ? 'index' : page.slug.path}`
-    // createPrinterNode({
-    //   id,
-    //   fileName, // the filename of the image to be generated
-    //   outputDir: 'og-images/page', // relative to the 'public' folder.
-    //   data: {
-    //     // The data you wish to pass down to the react component to be rendered
-    //     title: pageTemplate.titleTag,
-    //     description: pageTemplate.metaDescription,
-    //   },
-    //   component: require.resolve('./src/templates/page.tsx'), // the react component to be used.
-    // })
     if (page.slug.path === '/') {
       createPage({
         path: '/',
@@ -132,7 +121,6 @@ exports.createPages = async ({ actions, graphql }) => {
         context: {
           id,
           ...page,
-          fileName,
         },
       })
     } else {
@@ -141,7 +129,6 @@ exports.createPages = async ({ actions, graphql }) => {
         component: pageTemplate,
         context: {
           ...page,
-          // fileName,
         },
       })
     }
