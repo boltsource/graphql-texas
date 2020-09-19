@@ -47,8 +47,14 @@ const StyledCard = styled.div`
 
 const StyledParagraph = styled.div`
   @media (min-width: 1024px) {
-    margin-left: 110px;
+    margin-left: 150px;
     margin-top: 15px;
+  }
+`
+
+const TimeContainer = styled.div`
+  @media (min-width: 1024px) {
+    min-width: 110px;
   }
 `
 
@@ -57,11 +63,11 @@ const TimeSection = props => {
     <TimeSectionContainer className="rounded-lg overflow-hidden bg-secondary mt-10 relative">
       <StyledCard className="px-6 py-4">
         <div className="flex flex-col lg:flex-row lg:items-start justify-start">
-          <div className="lg:w-32">
-            <p className="text-white font-poppins font-semibold text-base text-center lg:text-left mb-2 lg:mb-0 lg:mt-1">
+          <TimeContainer>
+            <p className="text-white font-poppins font-semibold text-base text-center lg:text-left mb-2 lg:mb-0 lg:mt-1 lg:flex">
               {moment(props?.eventDateTime).format('h:mm A')} CST
             </p>
-          </div>
+          </TimeContainer>
           <div className="lg:ml-10">
             <p className="text-white font-semibold font-montserrat text-center lg:text-left text-xl mb-2">
               {props?.title}
