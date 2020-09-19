@@ -6,8 +6,9 @@ import { TitleWrapper } from '../base-layout'
 const StyledImage = styled.img`
   position: relative;
   display: block;
-  height: 29px;
+  height: 50px;
   width: auto;
+  margin-bottom: 20px;
   @media (min-width: 1024px) {
     height: 55px;
   }
@@ -115,7 +116,7 @@ const Sponsors = (props: SponsorsProps) => {
       </TitleWrapper>
       <InnerContainer className="lg:flex lg:justify-center">
         <Container className="lg:w-full lg:flex lg:justify-center">
-          <div className="grid grid-cols-3 mt-16 lg:w-9/12">
+          <div className="flex flex-col items-center justify-between lg:grid lg:grid-cols-3 mt-16 lg:w-9/12">
             {props?.sponsors &&
               props?.sponsors.map(({ id, ...s }, i) => {
                 let idx = i + 1
