@@ -52,6 +52,7 @@ interface IntroductionTitleTextProps {
 const Container = styled.div`
   @media (min-width: 1024px) {
     margin-top: 190px;
+    padding-bottom: 120px;
   }
 `
 
