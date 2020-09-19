@@ -52,7 +52,7 @@ const CTAbuttons = props => {
   const eventTimeFormated = moment(props?.eventDate)
   return (
     <div className="flex flex-col justify-center lg:self-start lg:ml-20 mt-10">
-      <div className="flex justify-center bg-transparent text-quaternary font-normal font-poppins py-4 px-10 lg:px-8 border-tertiary border-2 text-xl lg:text-8xl lg:max-w-sm lg:mb-10">
+      <div className="flex justify-center bg-transparent text-quaternary font-normal font-poppins py-4 lg:px-8 border-tertiary border-2 text-xl lg:text-8xl lg:max-w-sm lg:mb-10">
         <div className="flex items-center">
           <CalendarIcon />
           <span className="ml-6">{`${eventTimeFormated.format(
@@ -85,7 +85,7 @@ const FeatureEventHero = (props: FeatureEventType) => {
   const sponsorInfo = props?.sponsorInfo?.raw?.children
   return (
     <div className="flex lg:grid lg:grid-cols-2 flex-col lg:flex-row">
-      <div className="lg:flex lg:flex-col">
+      <div className="flex flex-col">
         <TitleContainer className="lg:self-end">
           <h2 className="font-montserrat text-white text-3xl lg:text-7xl text-center lg:text-left">
             {eventName &&

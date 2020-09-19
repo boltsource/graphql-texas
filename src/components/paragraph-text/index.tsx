@@ -18,6 +18,7 @@ const ParagraphText = ({
         key={i}
         isMarked={p.underline || false}
         className={additionalClassNames}
+        addMarginBottom={i === children.length - 1}
       >
         <span
           className={`${
