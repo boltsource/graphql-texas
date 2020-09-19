@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 
 const LineMark = styled.span`
   position: relative;
+  float: left;
 
   ${props =>
     props?.isMarked &&
@@ -29,7 +30,7 @@ const TextMarked = ({
   isMarked = false,
 }: TextMarkedProps) => {
   return (
-    <LineMark isMarked={isMarked} className={`lg:mb-5 ${className}`}>
+    <LineMark isMarked={isMarked} className={`${className}`}>
       {children}
     </LineMark>
   )
