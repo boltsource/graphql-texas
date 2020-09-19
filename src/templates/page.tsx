@@ -112,7 +112,7 @@ type TemplateProps = {
 const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
   return (
     <BaseLayout>
-      <Seo data={pageContext} />
+      <Seo {...pageContext} />
       <GeometryDecoration />
       <div className="container">
         <FeatureEventHero {...pageContext.featureEvent} />
