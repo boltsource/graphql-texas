@@ -40,6 +40,7 @@ exports.createPages = async ({ actions, graphql }) => {
                 raw
               }
               schedule {
+                id
                 timeSections {
                   author
                   id

@@ -7,28 +7,6 @@ import ParagraphText from '../paragraph-text'
 
 import { TextRichType } from '../../types'
 
-const StyledSvg = styled.svg`
-  position: absolute;
-  top: 28px;
-  right: 20px;
-  transform: rotate(180deg);
-  transition: transform 0.3s ease-in-out;
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.6;
-  ${props =>
-    props.rotate &&
-    `
-    transform: rotate(0deg);
-  `}
-  @media (min-width: 1024px) {
-    top: 49px;
-    right: 40px;
-    height: 15px;
-    width: 15px;
-  }
-`
-
 const TimeSectionContainer = styled.div`
   max-width: 100%;
   @media (min-width: 1024px) {
@@ -119,6 +97,7 @@ const TimeSection = props => {
 
 interface SchedulePropTypes {
   timeSections: {
+    id: string
     author: string
     title: string
     eventDateTime: string
@@ -160,7 +139,7 @@ const StyledHeading = styled.h3`
 
 const Schedule = (props: SchedulePropTypes) => {
   return (
-    <div className="mb-24 mt-32">
+    <div className="mb-24 mt-32" id="Schedule">
       <TitleWrapper>
         <StyledHeading className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white mb-2 lg:block lg:bg-primary relative lg:px-10">{`<Schedule />`}</StyledHeading>
       </TitleWrapper>

@@ -33,6 +33,7 @@ export type FeatureEventType = {
   }
   schedule: {
     timeSections: {
+      id: string
       author: string
       title: string
       eventDateTime: string

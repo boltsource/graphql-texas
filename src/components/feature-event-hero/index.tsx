@@ -1,18 +1,19 @@
 import React from 'react'
 import moment from 'moment'
-import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import GraphImg from 'graphcms-image'
+import { Link as ScrollLink } from 'react-scroll'
 
 import ParagraphText from '../paragraph-text'
 import CalendarIcon from '../calendar-icon'
 
 import { FeatureEventType } from '../../types'
 
-const StyledLink = styled(Link)`
+const StyledScroll = styled(ScrollLink)`
+  cursor: pointer;
   z-index: 2;
   @media (min-width: 1024px) {
-    min-width: 11.25rem;
+    min-width: 17.75rem;
   }
 `
 
@@ -61,13 +62,19 @@ const CTAbuttons = props => {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row">
-        <StyledLink
-          to={'/#Schedule'}
-          target="_blank"
+        <StyledScroll
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          to={'Schedule'}
           className="bg-transparent text-quaternary font-normal font-poppins py-4 px-10 lg:px-5 border-quaternary border-2 text-base lg:text-lg mt-5 lg:mt-0 text-center cursor-pointer"
         >
           View Schedule
-        </StyledLink>
+        </StyledScroll>
+        {/* <StyledAnchor className="bg-transparent text-quaternary font-normal font-poppins py-4 px-10 lg:px-5 border-quaternary border-2 text-base lg:text-lg mt-5 lg:mt-0 text-center cursor-pointer">
+          View Schedule
+        </StyledAnchor> */}
         <StyledAnchor
           href={props?.meetupLink}
           target="_blank"
