@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 
 /**
  * Configure your Gatsby site with this file.
@@ -23,7 +23,7 @@ module.exports = {
         endpoint: process.env.GRAPHCMS_ENDPOINT,
         downloadLocalImages: true,
         buildMarkdownNodes: true,
-        fragmentsPath: './.cache/graphcms-fragments'
+        fragmentsPath: './.cache/graphcms-fragments',
       },
     },
     'gatsby-transformer-sharp',
@@ -73,10 +73,10 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-142150624-5",
+        trackingId: 'UA-142150624-5',
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: false,
-      }
-    }
+      },
+    },
   ],
 }

@@ -7,8 +7,8 @@ import TextMarked from '../text-marked'
 
 interface HeaderheaderDataStateType {
   graphCmsMenu: {
-    id: string,
-    name: string,
+    id: string
+    name: string
     pages: {
       id: string
       title: string
@@ -29,7 +29,7 @@ const StyledList = styled.ul`
 const Header = () => {
   const data: HeaderheaderDataStateType = useStaticQuery(graphql`
     query {
-      graphCmsMenu(name: {eq: "Main"}) {
+      graphCmsMenu(name: { eq: "Main" }) {
         id
         name
         pages {
@@ -45,10 +45,8 @@ const Header = () => {
   `)
 
   const {
-    graphCmsMenu: {
-      pages
-    },
-  } = data;
+    graphCmsMenu: { pages },
+  } = data
 
   return (
     <div className="bg-primary pt-5 lg:pt-10 border-secondary flex flex-row items-center justify-between">

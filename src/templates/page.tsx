@@ -6,9 +6,9 @@ import FeatureEventHero from '../components/feature-event-hero'
 import IntroductionTitleText from '../components/introduction-title-text'
 import OurSpeakers from '../components/our-speakers'
 import Schedule from '../components/schedule'
-import SectionTextImage from '../components/section-text-image'
 import Sponsors from '../components/sponsors'
 import CtaBanner from '../components/cta-banner'
+import { Helmet } from 'react-helmet'
 
 import { TextRichType, FeatureEventType } from '../types'
 
@@ -40,6 +40,7 @@ const GeometryDecoration = (props: any) => {
 }
 
 type TemplateProps = {
+  ogImage?: any
   slug: {
     id: string
     path: string
@@ -111,6 +112,59 @@ type TemplateProps = {
 const PageTemplate = ({ pageContext }: { pageContext: TemplateProps }) => {
   return (
     <BaseLayout>
+      <Helmet>
+        <html lang="en" amp />
+        <body className="root bg-primary" />
+        <meta charSet="utf-8" />
+        <link rel="canonical" href="https://graphql-texas.org" />
+        <title>{pageContext.titleTag || ''}</title>
+        <meta name="description" content={pageContext.metaDescription || ''} />
+        <meta name="keywords" content={pageContext.metaKeywords || ''} />
+        <meta property="og:title" content={pageContext.titleTag || ''} />
+        <meta property="og:url" content="https://graphql-texas.org" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content={pageContext.metaDescription || ''}
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={pageContext.titleTag || ''} />
+        <meta
+          name="twitter:description"
+          content={pageContext.metaDescription || ''}
+        />
+        <meta name="twitter:url" content="https://graphql-texas.org" />
+        <meta name="twitter:site" content="`@BoltSourceIO" />
+        {/* <meta
+          property="twitter:image"
+          content={`https://graphql-texas.org/og-images/page/${pageContext.fileName}.png`}
+        /> */}
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/static/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/static/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/static/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link
+          rel="mask-icon"
+          href="/static/safari-pinned-tab.svg"
+          color="#5bbad5"
+        />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+      </Helmet>
       <GeometryDecoration />
       <div className="container">
         <FeatureEventHero {...pageContext.featureEvent} />
