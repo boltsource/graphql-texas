@@ -51,7 +51,7 @@ const TimeSection = props => {
               {props?.title}
             </p>
             <div
-              className={`relative overflow-hidden transition-all ease-out duration-1000 hidden lg:block tracking-normal`}
+              className={`relative overflow-hidden transition-all ease-out duration-1000 block tracking-normal`}
             >
               <p className="text-center lg:text-left lg:mb-4">
                 {props.description &&
@@ -76,20 +76,6 @@ const TimeSection = props => {
             {props.author}
           </StyledParagraph>
         )}
-        <div
-          className={`relative overflow-hidden transition-all ease-out duration-1000 lg:hidden max-h-0`}
-        >
-          <p className="text-center lg:text-left">
-            {props.description &&
-              props.description?.raw?.children?.map(p => (
-                <ParagraphText
-                  key={JSON.stringify(p)}
-                  {...p}
-                  additionalClassNames="font-poppins text-white text-base"
-                />
-              ))}
-          </p>
-        </div>
       </StyledCard>
     </TimeSectionContainer>
   )
