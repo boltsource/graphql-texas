@@ -49,7 +49,7 @@ const SEO = data => {
         sizes="16x16"
         href="/static/favicon-16x16.png"
       />
-      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="manifest" href="/static/site.webmanifest" />
       <link
         rel="mask-icon"
         href="/static/safari-pinned-tab.svg"
