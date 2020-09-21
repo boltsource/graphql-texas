@@ -26,11 +26,11 @@ const SEO = data => {
       <meta property="og:description" content={data?.metaDescription || ''} />
       <meta
         property="og:image"
-        content="https://og-image-service-graphql-texas.vercel.app/og-image.png"
+        content="https://og-image-service-graphql-texas.vercel.app/.jpeg?theme=light&md=1&fontSize=200px&images=https%3A%2F%2Fraw.githubusercontent.com%2Fboltsource%2Fgraphql-texas%2Fmaster%2Fstatic%2Fgraphql-texas-logo.svg"
       />
       <meta
         property="twitter:image"
-        content="https://og-image-service-graphql-texas.vercel.app/og-image.png"
+        content="https://og-image-service-graphql-texas.vercel.app/.jpeg?theme=light&md=1&fontSize=200px&images=https%3A%2F%2Fraw.githubusercontent.com%2Fboltsource%2Fgraphql-texas%2Fmaster%2Fstatic%2Fgraphql-texas-logo.svg"
       />
       <link
         rel="apple-touch-icon"
@@ -50,11 +50,7 @@ const SEO = data => {
         href="favicon-16x16.png"
       />
       <link rel="manifest" href="site.webmanifest" />
-      <link
-        rel="mask-icon"
-        href="safari-pinned-tab.svg"
-        color="#5bbad5"
-      />
+      <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
 
