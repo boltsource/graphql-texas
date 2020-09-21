@@ -1,7 +1,23 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 const SEO = data => {
+  const { ogImageDefault } = useStaticQuery(
+    graphql`
+      query {
+        ogImageDefault: file(absolutePath: { regex: "/images/social/" }) {
+          childImageSharp {
+            fixed(height: 630, width: 1200) {
+              src
+            }
+          }
+        }
+      }
+    `,
+  )
+
+  const ogImage = `https://www.graphql-texas.org${ogImageDefault.childImageSharp.fixed.src}`
   return (
     <Helmet
       defer={false}
@@ -24,8 +40,8 @@ const SEO = data => {
       <meta property="og:url" content="https://graphql-texas.org" />
       <meta property="og:type" content="website" />
       <meta property="og:description" content={data?.metaDescription || ''} />
-      <meta property="og:image" content="/card.png" />
-      <meta property="twitter:image" content="/card.png" />
+      <meta property="og:image" content={ogImage} />
+      <meta property="twitter:image" content={ogImage} />
       <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
       <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
       <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
