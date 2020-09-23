@@ -4,7 +4,6 @@ import moment from 'moment'
 
 import Seo from '../components/seo'
 import BaseLayout, { TitleWrapper } from '../components/base-layout'
-import { FeatureEventType } from '../types'
 import ParagraphText from '../components/paragraph-text'
 
 interface TemplateProps {
@@ -52,13 +51,14 @@ const StyledHeading = styled.h3`
 
 const EventSectionWrapper = styled.div`
   position: relative;
+  margin-bottom: 70px;
 `
 
 const TimeSectionContainer = styled.div`
   max-width: 100%;
   @media (min-width: 1024px) {
     max-width: 1110px;
-    margin-bottom: 70px;
+    margin-bottom: 20px;
   }
 `
 
@@ -106,57 +106,24 @@ const StyledSvg = styled.svg`
   }
 `
 
-const Arrow = props => {
-  return (
-    <StyledSvg
-      viewBox="0 0 12 12"
-      fill="none"
-      className="cursor-pointer"
-      {...props}
-    >
-      <path
-        d="M6 2.292l-6 6 1.415 1.415L6 5.122l4.585 4.585L12 8.292l-6-6z"
-        fill="#fff"
-      />
-    </StyledSvg>
-  )
-}
-
 const InnerAnimator = styled.div`
-  max-height: 0;
   overflow: hidden;
   text-transform: cubic-bezier(0.95, 0.05, 0.795, 0.035);
   transition-duration: 0.5s;
   transition-property: max-height;
   z-index: 1;
   position: relative;
-  ${props =>
-    props.isOpen &&
-    `
   max-height: 100rem;
   transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition-duration: 0.5s;
-  transition-property: max-height;
-  `}
 `
 
 const ContainerAnimator = styled.div`
-  opacity: 0;
-  transform: translateY(-1rem);
-  transition-timing-function: linear, ease;
-  transition-duration: 0.1s;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
   transition-property: opacity, transform;
-  transition-delay: 0.5s;
-  ${props =>
-    props.isOpen &&
-    `
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.2s;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.2s;
-    transition-property: opacity, transform;
-  `}
   @media (min-width: 1024px) {
     margin-top: 55px;
   }
@@ -172,13 +139,9 @@ const StyledIframe = styled.iframe`
 `
 
 const TimeSection = props => {
-  const [isOpenCard, setIsOpenCard] = useState(false)
+  const [isOpenCard, setIsOpenCard] = useState(true)
   return (
     <TimeSectionContainer className="rounded-lg overflow-hidden bg-secondary mt-10 lg:mt-8 relative">
-      <Arrow
-        onClick={() => setIsOpenCard(!isOpenCard)}
-        rotate={isOpenCard ? 'true' : undefined}
-      />
       <StyledCard className="px-6 py-4">
         <div className="flex flex-col justify-start">
           <TimeContainer>
@@ -203,7 +166,6 @@ const TimeSection = props => {
             <InnerAnimator isOpen={isOpenCard ? 'true' : null}>
               <ContainerAnimator
                 className={`relative overflow-hidden transition-all ease-out duration-1000 tracking-normal`}
-                isOpen={isOpenCard ? 'true' : null}
               >
                 {props?.youtube && (
                   <StyledIframe
