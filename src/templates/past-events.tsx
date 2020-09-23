@@ -208,7 +208,7 @@ const TimeSection = props => {
                 {props?.youtube && (
                   <StyledIframe
                     className="mb-4 lg:mb-10"
-                    src={props.youtube}
+                    src={`https://www.youtube.com/embed/${props.youtube}`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
