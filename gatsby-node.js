@@ -20,7 +20,6 @@ exports.createPages = async ({ actions, graphql }) => {
             titleTag
             metaDescription
             metaKeywords
-            copyright
             slug {
               id
               path
@@ -97,19 +96,35 @@ exports.createPages = async ({ actions, graphql }) => {
           }
         }
       }
+      allGraphCmsEvent {
+        edges {
+          node {
+            eventDate
+            id
+            schedule {
+              id
+              timeSections {
+                author
+                id
+                title
+                youtube
+                eventDateTime
+                description {
+                  raw
+                }
+              }
+            }
+          }
+        }
+      }
     }
   `)
 
   const pageTemplate = path.resolve('./src/templates/page.tsx')
+  const pastEventsTemplate = path.resolve('./src/templates/past-events.tsx')
 
-  // Only publish pages with a `status === 'publish'` in production. This
-  // excludes drafts, future posts, etc. They will appear in development,
-  // but not in a production build.
   const allPages = data.allGraphCmsPage.edges.map(edge => edge.node)
-  // const pages =
-  //   process.env.NODE_ENV === 'production'
-  //     ? getOnlyPublished(allPages)
-  //     : allPages
+  const allEvents = data.allGraphCmsEvent.edges.map(edge => edge.node)
 
   // Call `createPage()` once per GraphCMS page
   _.each(allPages, ({ id, ...page }) => {
@@ -120,6 +135,16 @@ exports.createPages = async ({ actions, graphql }) => {
         component: pageTemplate,
         context: {
           id,
+          ...page,
+        },
+      })
+    } else if (page.slug.path === 'past-events') {
+      createPage({
+        path: page.slug.path,
+        component: pastEventsTemplate,
+        context: {
+          id,
+          allEvents,
           ...page,
         },
       })
