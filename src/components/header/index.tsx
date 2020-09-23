@@ -26,6 +26,8 @@ const StyledList = styled.ul`
   }
 `
 
+const isBrowser = typeof window !== `undefined`
+
 const Header = () => {
   const data: HeaderheaderDataStateType = useStaticQuery(graphql`
     query {
@@ -56,7 +58,7 @@ const Header = () => {
           <li key={id}>
             <TextMarked
               className="mr-6"
-              isMarked={window.location.pathname === slug.path}
+              isMarked={isBrowser && window.location.pathname === slug.path}
             >
               <Link
                 className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer relative"
