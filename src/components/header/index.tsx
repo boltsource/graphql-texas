@@ -62,7 +62,7 @@ const Header = () => {
             >
               <Link
                 className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer relative"
-                to={slug.path}
+                to={slug.path === '/' ? '/' : `/${slug.path}`}
                 style={{
                   zIndex: 2,
                 }}
