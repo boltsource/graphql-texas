@@ -54,7 +54,10 @@ const Header = () => {
       <StyledList className="flex mr-1">
         {pages.map(({ id, title, slug }) => (
           <li key={id}>
-            <TextMarked className="mr-6" isMarked>
+            <TextMarked
+              className="mr-6"
+              isMarked={window.location.pathname === slug.path}
+            >
               <Link
                 className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer relative"
                 to={slug.path}
