@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
 
@@ -29,6 +29,7 @@ const StyledList = styled.ul`
 const isBrowser = typeof window !== `undefined`
 
 const Header = () => {
+  const [currentSlug, setCurrentSlug] = useState<string>('')
   const data: HeaderheaderDataStateType = useStaticQuery(graphql`
     query {
       graphCmsMenu(name: { eq: "Main" }) {
@@ -50,6 +51,12 @@ const Header = () => {
     graphCmsMenu: { pages },
   } = data
 
+  useEffect(() => {
+    if (isBrowser) {
+      setCurrentSlug(window.location.pathname)
+    }
+  }, [])
+
   return (
     <div className="bg-primary pt-5 lg:pt-10 border-secondary flex flex-row items-center justify-between">
       <Logo />
@@ -58,7 +65,9 @@ const Header = () => {
           <li key={id}>
             <TextMarked
               className="mr-6"
-              isMarked={isBrowser && window.location.pathname === slug.path}
+              isMarked={
+                currentSlug === slug.path || currentSlug === `/${slug.path}`
+              }
             >
               <Link
                 className="font-poppins text-xs md:text-base text-white font-semibold px-1 cursor-pointer relative"
