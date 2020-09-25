@@ -52,7 +52,7 @@ Proposed Title: ${proposedTitle}
         success: true,
       })
     } catch (err) {
-      console.log('error creating work lead in slack')
+      console.log('error creating talk submission in slack')
       console.error(err)
       res.status(500).send({
         message: err.message || err,
