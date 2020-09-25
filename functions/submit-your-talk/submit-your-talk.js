@@ -12,7 +12,6 @@ app.post(
   '/.netlify/functions/submit-your-talk',
   bodyParser.json(),
   async (req, res, next) => {
-    console.log({ body: res.body })
     try {
       const {
         email = '',
@@ -39,12 +38,9 @@ Proposed Title: ${proposedTitle}
 
       console.log({ text })
 
-      await axios.post(
-        'https://hooks.slack.com/services/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',
-        {
-          text,
-        },
-      )
+      await axios.post(process.env.SLACK_HOOK_ENDPOINT, {
+        text,
+      })
 
       console.log('talk created in slack')
 
