@@ -132,6 +132,7 @@ module.exports = {
       tertiary: '#9A1D77',
       quaternary: '#FF39BE',
       quinary: '#451040',
+      texted: '#f7fafc',
     },
     spacing: {
       px: '1px',

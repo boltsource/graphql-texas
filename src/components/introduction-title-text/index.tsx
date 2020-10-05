@@ -19,7 +19,7 @@ const BoxDecoration = styled.div`
     width: 5px;
     right: 70px;
     height: 166px;
-    background-color: #fff;
+    background-color: #ffffff3e;
     display: block;
     &:before {
       content: '';
@@ -31,6 +31,7 @@ const BoxDecoration = styled.div`
       top: 169px;
       background-repeat: no-repeat;
       background-size: contain;
+      mix-blend-mode: overlay;
     }
   }
 `
@@ -69,7 +70,7 @@ const IntroductionTitleText = (props: IntroductionTitleTextProps) => {
         <BoxDecoration />
         <TextContainer>
           {props.title && (
-            <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white">
+            <h3 className="text-center lg:text-left font-semibold font-montserrat text-2xl lg:text-4xl text-white opacity-75">
               {props.title}
             </h3>
           )}

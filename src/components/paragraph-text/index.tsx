@@ -23,7 +23,8 @@ const ParagraphText = ({
         <span
           className={`${
             p?.bold ? 'font-bold' : className || 'font-normal'
-          } relative`}
+          } relative` }
+            style={{ opacity: 0.85}}
         >
           {p.text}
         </span>

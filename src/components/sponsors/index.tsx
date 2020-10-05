@@ -16,7 +16,8 @@ const StyledImage = styled.img`
     props?.imageEffect &&
     props.imageEffect === 'first-logo' &&
     `
-    mix-blend-mode: screen;
+    mix-blend-mode: luminosity;
+    filter: brightness(3);
     @media (min-width: 1024px) {
       padding-left: 40px;
     }
@@ -26,12 +27,14 @@ const StyledImage = styled.img`
     props.imageEffect === 'second-logo' &&
     `
     mix-blend-mode: luminosity;
+    filter: brightness(0.7);
   `}
   ${props =>
     props?.imageEffect &&
     props.imageEffect === 'third-logo' &&
     `
-    mix-blend-mode: color-dodge;
+    mix-blend-mode: luminosity;
+    filter: brightness(1.25);
     @media (min-width: 1024px) {
       padding-right: 40px;
     }

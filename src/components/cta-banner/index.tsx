@@ -7,7 +7,15 @@ import { TextRichType } from '../types'
 
 const StyledAnchor = styled.a`
   max-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  transition: all 0.5s;
+  &:hover {
+    background: #fff;
+    color: #451040;
+  }
   @media (min-width: 1024px) {
     max-width: 250px;
     width: 100%;
@@ -62,6 +70,7 @@ const InnerContainer = styled.div`
       top: 50px;
       background-repeat: no-repeat;
       background-size: contain;
+      opacity: 0.5;
     }
     &:after {
       content: '';
@@ -73,6 +82,7 @@ const InnerContainer = styled.div`
       bottom: 50px;
       background-repeat: no-repeat;
       background-size: contain;
+      opacity: 0.5;
     }
   }
 `

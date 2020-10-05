@@ -125,7 +125,7 @@ const ContainerAnimator = styled.div`
   transition-duration: 0.2s;
   transition-property: opacity, transform;
   @media (min-width: 1024px) {
-    margin-top: 55px;
+    margin-top: 10px;
   }
 `
 

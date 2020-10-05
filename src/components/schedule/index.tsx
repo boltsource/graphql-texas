@@ -68,7 +68,7 @@ const TimeSection = props => {
         </div>
         {props?.author && (
           <StyledParagraph
-            className="font-semibold font-poppins text-center lg:text-left text-lg mb-4 mt-8"
+            className="font-semibold font-poppins text-center opacity-100 lg:text-left text-lg mb-4 mt-8"
             style={{
               color: 'rgba(255, 255, 255, 0.7)',
             }}

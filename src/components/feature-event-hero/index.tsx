@@ -12,15 +12,33 @@ import { FeatureEventType } from '../../types'
 const StyledScroll = styled(ScrollLink)`
   cursor: pointer;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .5s;
   @media (min-width: 1024px) {
-    min-width: 17.75rem;
+    min-width: 12rem;
+  }
+  &:hover {
+    background: #FF39BE;
+    color: #350030;
   }
 `
 
 const StyledAnchor = styled.a`
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .5s;
+  border-color: #FF39BE;
+  background: #A30378;
   @media (min-width: 1024px) {
     min-width: 17.75rem;
+  }
+  &:hover {
+    background: #FFF;
+    color: #a30378;
   }
 `
 
@@ -53,7 +71,7 @@ const CTAbuttons = props => {
   const eventTimeFormated = moment(props?.eventDate)
   return (
     <div className="flex flex-col justify-center lg:self-start lg:ml-20 mt-10">
-      <div className="flex justify-center bg-transparent text-quaternary font-normal font-poppins py-4 lg:px-8 border-tertiary border-2 text-xl lg:text-8xl lg:max-w-sm lg:mb-10">
+      <div style={{ borderStyle: 'dashed' }} className="flex justify-center bg-transparent text-quaternary font-normal font-poppins py-4 lg:px-8 border-tertiary border-2 text-xl lg:text-8xl lg:max-w-sm lg:mb-10">
         <div className="flex items-center">
           <CalendarIcon />
           <span className="ml-6">{`${eventTimeFormated.format(
