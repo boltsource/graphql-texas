@@ -8,6 +8,7 @@ import { TitleWrapper } from '../base-layout'
 const ProfileContainer = styled.div`
   width: 16.875rem;
   @media (min-width: 1024px) {
+    min-height: 312px;
     width: 312px;
     &:before {
       transform: rotate(180deg);
