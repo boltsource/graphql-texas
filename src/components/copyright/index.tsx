@@ -23,7 +23,7 @@ const Copyright = () => {
       <BackgroundContainer className="h-10 w-full bg-quinary mt-24" />
       <BackgroundContainer className="w-full bg-quinary pb-4">
         <p className="justify-center font-poppins font-normal text-xs lg:text-base text-white text-center relative">
-          {`All rights reserved by © React Texas ${new Date().getFullYear()} `}
+          {`All rights reserved by © GraphQL Texas ${new Date().getFullYear()} `}
         </p>
       </BackgroundContainer>
     </>
