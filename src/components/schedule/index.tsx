@@ -38,7 +38,7 @@ const TimeContainer = styled.div`
 
 const TimeSection = props => {
   return (
-    <TimeSectionContainer className="rounded-lg overflow-hidden bg-secondary mt-10 relative">
+    <TimeSectionContainer className="rounded-lg overflow-hidden bg-secondary mt-10 relative w-full">
       <StyledCard className="px-6 py-4">
         <div className="flex flex-col lg:flex-row lg:items-start justify-start">
           <TimeContainer>
