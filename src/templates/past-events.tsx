@@ -205,11 +205,12 @@ const StyledEventTimeContainer = styled(TimeContainer)`
 `
 
 const EventSection = props => {
+  console.log(props);
   return (
     <EventSectionWrapper>
       <StyledEventTimeContainer>
         <p className="hidden text-white font-poppins font-semibold text-base text-center lg:text-left mb-2 lg:mb-0 lg:mt-1 lg:flex">
-          {moment(props?.eventDateTime).format('D MMM, YYYY')}
+          {moment(props?.eventDate).format('D MMM, YYYY')}
         </p>
       </StyledEventTimeContainer>
       {props.schedule &&
